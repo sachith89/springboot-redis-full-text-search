@@ -2,11 +2,20 @@
 
 ## Installing Redisearch and RedisJson
 
-docker pull redis/redis-stack
+$ docker pull redis/redis-stack
+
+$ docker run -d --name redis-stack -p 6379:6379 -p 8001:8001 redis/redis-stack:latest
+
+##Access redis stack UI
+
+http://localhost:8001/
 
 Start redis and then in cli run : redis-cli monitor - this will help to watch what queries are executed.
+##Connect with redis-cli
+$ docker exec -it redis-stack redis-cli monitor
 
-## Topics covered
+
+## Implementation
 Secondary indexing
 
 Multi-field queries
